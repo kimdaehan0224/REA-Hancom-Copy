@@ -1,0 +1,11 @@
+# 의존성·빌드 결과물
+node_modules/
+dist/
+*.exe
+
+# 원본 한컴타자연습 캡처는 저작권 때문에 올리지 않음 (screenshots/app/ 의 자체 앱 캡처만 올림)
+screenshots/*
+!screenshots/app/
+
+# 로컬 도구 설정
+.claude/

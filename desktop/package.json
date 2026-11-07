@@ -1,0 +1,40 @@
+{
+  "name": "rea-typing-trainer",
+  "productName": "타자연습 (REA 재구현)",
+  "version": "1.0.0",
+  "description": "app 폴더의 타자연습 웹앱을 감싼 Electron 데스크톱 앱",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "local.rea.typingtrainer",
+    "productName": "TypingTrainer-REA",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../app",
+        "to": "app",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": [{ "target": "portable", "arch": ["x64"] }]
+    },
+    "portable": {
+      "artifactName": "TypingTrainer-REA-${version}-portable.exe"
+    }
+  }
+}
